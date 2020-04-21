@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<title>Alex Alpha</title>
+<form style="display: block; width: 100%; max-width: 700px; margin: 0 auto;">
+  <label>
+    Enter some word
+    <input />
+  </label>
+  <input type="submit" />
+  <h1></h1>
+</form>
+
+<script type="module">
+  const form = document.body.querySelector("form")
+  const input = document.body.querySelector("input")
+  const h1 = document.body.querySelector("h1")
+  form.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const converter = {
+      A: "Alfa",
+      B: "Bravo",
+      C: "Charlie",
+      D: "Delta",
+      E: "Echo",
+      F: "Foxtrot",
+      G: "Golf",
+      H: "Hotel",
+      I: "India",
+      J: "Juliett",
+      K: "Kilo",
+      L: "Lima",
+      M: "Mike",
+      N: "November",
+      O: "Oscar",
+      P: "Papa",
+      Q: "Quebec",
+      R: "Romeo",
+      S: "Sierra",
+      T: "Tango",
+      U: "Uniform",
+      V: "Victor",
+      W: "Whiskey",
+      X: "X-Ray",
+      Y: "Yankee",
+      Z: "Zulu",
+      0: "Zero",
+      1: "One",
+      2: "Two",
+      3: "Three",
+      4: "Four",
+      5: "Five",
+      6: "Six",
+      7: "Seven",
+      8: "Eight",
+      9: "Nine",
+      "00": "Hundred",
+      "000": "Thousand",
+    }
+
+    const words = []
+    for (const letter of input.value.toUpperCase()) {
+      words.push(converter[letter])
+    }
+
+    h1.textContent = words.join(" ")
+  })
+</script>
